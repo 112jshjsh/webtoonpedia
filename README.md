@@ -9,10 +9,14 @@ Webtoon Wikipedia app
 
 ---
 
+### Features 
 - Naver Webtoon API
 - Detail Screens
   - Thumbnail, Title
   - Description
   - Webtoon Rating
   - Latest Episodes
-- Favorite 
+- Favourite
+
+#### Required to be added
+- Direct webtoon links in the browser 
