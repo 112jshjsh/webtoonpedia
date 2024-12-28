@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:webtoonpedia/models/webtoon_detail_model.dart';
 import 'package:webtoonpedia/models/webtoon_episode_model.dart';
 import 'package:webtoonpedia/services/api_service.dart';
+import 'package:webtoonpedia/widgets/episode_widget.dart';
 
 class DetailScreen extends StatefulWidget {
   final String title, thumb, id;
@@ -46,6 +47,14 @@ class _DetailScreenState extends State<DetailScreen> {
         surfaceTintColor: Colors.white,
         shadowColor: Colors.black,
         centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.favorite_outline_outlined,
+            ),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -115,46 +124,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         for (var episode in snapshot.data!.length > 10
                             ? snapshot.data!.sublist(0, 10)
                             : snapshot.data!)
-                          Container(
-                            margin: const EdgeInsets.only(bottom: 10),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: Colors.green.shade400,
-                              boxShadow: [
-                                BoxShadow(
-                                  blurRadius: 5,
-                                  offset: const Offset(5, 5),
-                                  color: Colors.black.withOpacity(0.1),
-                                ),
-                              ],
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                vertical: 10,
-                                horizontal: 20,
-                              ),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Flexible(
-                                    child: Text(
-                                      episode.title,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: const TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 16,
-                                      ),
-                                    ),
-                                  ),
-                                  const Icon(
-                                    Icons.chevron_right_rounded,
-                                    color: Colors.white,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
+                          Episode(episode: episode),
                       ],
                     );
                   }
