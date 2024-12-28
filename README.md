@@ -1,3 +1,5 @@
+
+
 # webtoonpedia
 
 Webtoon Wikipedia app
@@ -10,7 +12,7 @@ Webtoon Wikipedia app
 ---
 
 ### Features 
-- Naver Webtoon API
+- Webtoon API
 - Detail Screens
   - Thumbnail, Title
   - Description
@@ -19,4 +21,9 @@ Webtoon Wikipedia app
 - Favourite
 
 #### Required to be added
-- Direct webtoon links in the browser 
+- Direct webtoon links in the browser
+
+
+<div align="center">
+<img src="./preview.gif"  width="200"/>
+</div>
